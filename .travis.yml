@@ -1,7 +1,10 @@
 language: cpp
+sudo: required
+
+before_install:
+  - sudo scripts/build-SFML
 
 script:
-  - scripts/build-SFML
   - scripts/cmake-makefile
 
 matrix:

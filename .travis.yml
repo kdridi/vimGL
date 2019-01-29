@@ -15,12 +15,12 @@ matrix:
           packages:
             - cmake
             - g++
-            - libx11-dev
-            - libgl1-mesa-dev
-            - libudev-dev
-            - libopenal-dev
             - libflac-dev
-            - libvorbis-dev
-            - libflac-dev
-            - libxrandr-dev
             - libfreetype6-dev
+            - libgl1-mesa-dev
+            - libjpeg-dev
+            - libopenal-dev
+            - libudev-dev
+            - libvorbis-dev
+            - libx11-dev
+            - libxrandr-dev

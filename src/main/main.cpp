@@ -2,7 +2,7 @@
 
 int main()
 {
-    sf::Window window(sf::VideoMode(800, 600), "My window");
+    sf::Window window(sf::VideoMode(80 * 16, 45 * 16), "vimGL");
     
     // run the program as long as the window is open
     while (window.isOpen())
@@ -14,8 +14,19 @@ int main()
             // "close requested" event: we close the window
             if (event.type == sf::Event::Closed)
                 window.close();
+            
+            // "Escape Key pressed" event: we close the window
+            if (event.type == sf::Event::KeyPressed)
+                switch (event.key.code) {
+                    case sf::Keyboard::Escape:
+                        window.close();
+                        break;
+                    default:
+                        break;
+                }
         }
     }
     
     return 0;
 }
+

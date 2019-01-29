@@ -1,0 +1,15 @@
+language: cpp
+
+script:
+  - scripts/cmake-makefile
+
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode9.3
+
+    - os: linux
+      addons:
+        apt:
+          packages:
+            - build-essential

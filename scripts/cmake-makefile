@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+cd $(dirname $0)/..
+
+rm -rf target/makefile
+mkdir -p target/makefile
+cd target/makefile
+
+cmake ../.. \
+	-G "Unix Makefiles"
+
+make VERBOSE=1

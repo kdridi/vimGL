@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -e
+set -x
+
+cd $(dirname $0)/..
+ROOTDIR="$(pwd)"
+
+rm -rf target/vendor/SFML
+mkdir -p target/vendor/SFML
+cd target/vendor/SFML
+
+# apt install -y cmake g++ libx11-dev libgl1-mesa-dev libudev-dev libopenal-dev libflac-dev libvorbis-dev libflac-dev libxrandr-dev libfreetype6-dev
+# apt install -y cmake-curses-gui
+
+cmake ../../../vendor/SFML \
+	-DBUILD_SHARED_LIBS=OFF \
+	-DCMAKE_BUILD_TYPE=Debug \
+	-DCMAKE_INSTALL_PREFIX="${ROOTDIR}/target/prefix" \
+	-DCMAKE_OSX_ARCHITECTURES=x86_64 \
+	-DSFML_BUILD_DOC=OFF \
+	-DSFML_BUILD_EXAMPLES=ON \
+	-DSFML_BUILD_GRAPHICS=ON \
+	-DSFML_BUILD_NETWORK=ON \
+	-DSFML_BUILD_WINDOW=ON
+
+make VERBOSE=1 -j 8
+make install

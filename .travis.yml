@@ -1,6 +1,7 @@
 language: cpp
 
 script:
+  - scripts/build-SFML
   - scripts/cmake-makefile
 
 matrix:
@@ -12,4 +13,14 @@ matrix:
       addons:
         apt:
           packages:
-            - build-essential
+            - cmake
+            - g++
+            - libx11-dev
+            - libgl1-mesa-dev
+            - libudev-dev
+            - libopenal-dev
+            - libflac-dev
+            - libvorbis-dev
+            - libflac-dev
+            - libxrandr-dev
+            - libfreetype6-dev

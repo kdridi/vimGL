@@ -2,6 +2,8 @@ language: cpp
 sudo: required
 
 before_install:
+  - sudo rm -rf target
+  - mkdir target
   - sudo scripts/build-SFML
 
 script:

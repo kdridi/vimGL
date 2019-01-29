@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+cd $(dirname $0)/..
+
+rm -rf target/xcode
+mkdir -p target/xcode
+cd target/xcode
+
+cmake ../.. \
+	-G Xcode
+
+open vimGL.xcodeproj

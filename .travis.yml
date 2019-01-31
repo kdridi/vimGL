@@ -1,5 +1,6 @@
 sudo: required
 language: generic
+dist: xenial
 
 before_install:
   - sudo rm -rf target

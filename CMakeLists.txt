@@ -15,7 +15,32 @@ SET (EXECUTABLE_NAME "vimGL")
 ################################################################################
 # SOURCES
 ################################################################################
+SOURCE_GROUP("src" FILES
+	src/main/main.cpp
+)
+
+SOURCE_GROUP("src\\assets" FILES
+	src/main/assets.cpp
+	src/main/assets.hpp
+)
+
+SOURCE_GROUP("src\\keyboard" FILES
+	src/main/keyboard/handler.cpp
+	src/main/keyboard/handler.hpp
+)
+
+SOURCE_GROUP("src\\game" FILES
+	src/main/game/context.cpp
+	src/main/game/context.hpp
+)
+
 ADD_EXECUTABLE (${EXECUTABLE_NAME}
+	src/main/assets.cpp
+	src/main/assets.hpp
+	src/main/game/context.cpp
+	src/main/game/context.hpp
+	src/main/keyboard/handler.cpp
+	src/main/keyboard/handler.hpp
 	src/main/main.cpp
 )
 
